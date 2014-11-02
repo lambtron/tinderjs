@@ -31,11 +31,15 @@ client.authorize(
 
 ### .authorize(fb token, fb id, callback)
 
-  Authorizes the `TinderClient`. You must call this before any other method.
+  Authorizes the `TinderClient`. You must call this or `.setAuthToken()` before any other method.
   
 * `fb token` is a facebook user access token. You would acquire this by having your user log in using your application 
 * `fb id` is the id of the facebook user 
 * `callback` is called when the request completes 
+
+### .setAuthToken(x-auth-token)
+
+  If you use Charles Proxy or any other tool to see the requests being made from the Tinder app, you can explicitly set it with this method. You must either call this or `.authorize()` before any other method.
 
 ### .getDefaults()
 
